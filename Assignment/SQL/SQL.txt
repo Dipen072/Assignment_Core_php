@@ -1,0 +1,26 @@
+Create multiple tables and perform queries using:
+
+
+CREATE TABLE students(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50), age INT);
+CREATE TABLE marks(id INT AUTO_INCREMENT PRIMARY KEY, student_id INT, subject VARCHAR(50), score INT);
+
+-- INSERT
+INSERT INTO students (name, age) VALUES ('Dipen', 21);
+
+-- SELECT
+SELECT * FROM students;
+
+-- UPDATE
+UPDATE students SET age = 22 WHERE name='Dipen';
+
+-- DELETE
+DELETE FROM students WHERE id=3;
+
+-- WHERE / LIKE
+SELECT * FROM students WHERE name LIKE 'D%';
+
+-- GROUP BY / HAVING
+SELECT age, COUNT(*) FROM students GROUP BY age HAVING COUNT(*) > 1;
+
+-- LIMIT / OFFSET
+SELECT * FROM students LIMIT 5 OFFSET 2;
